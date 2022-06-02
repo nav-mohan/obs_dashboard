@@ -13,7 +13,7 @@ if(!audience){
 
 if(!domain){
     throw new Error(".env is missing AUTH0_DOMAIN");
-    domain = 'dev-nb9beumc.us.auth0.com/'
+    domain = 'dev-nb9beumc.us.auth0.com'
 }
 
 if(!serverPort){

@@ -33,18 +33,18 @@ app.get('/start', checkJwt, function (req, res) {
 	startDetachedOBS();
 })
 
-app.get('/pid', requiresAuth(), function (req, res) {
+app.get('/pid', checkJwt, function (req, res) {
 	console.log("GETTING PID");
 	getPID();
 })
 
-app.get('/stop', requiresAuth(), function (req, res) {
+app.get('/stop', checkJwt, function (req, res) {
 	res.send('Stopping OBS')
 	console.log("STOPPING OBS");
 	stopOBS()
 
 })
 
-httpServer.listen(NODE_SERVER_PORT, function () {
-	console.log(`SERVER STARTED ON ${NODE_SERVER_PORT}`);
+httpServer.listen(process.env.SERVER_PORT, function () {
+	console.log(`SERVER STARTED ON ${process.env.SERVER_PORT}`);
 })
