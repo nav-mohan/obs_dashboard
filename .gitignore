@@ -1,0 +1,5 @@
+*/.env
+*/node_modules
+react-frontend/build
+*/.DS_Store
+*/package-lock.json
