@@ -11,3 +11,11 @@ const io = require("socket.io")(httpServer, {
 		methods: ["GET"]
 	}
 });
+
+const getStatus = () => {
+	console.log("GETTING STATUS")
+}
+
+module.exports = {
+	getStatus
+}
