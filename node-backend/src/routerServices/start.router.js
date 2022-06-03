@@ -3,7 +3,8 @@ const {checkJwt} = require('../authAPI/check-jwt')
 const { exec } = require('child_process');
 // BASH SCRIPTING STUFF
 const { spawn } = require('child_process');
-const BASH_START_OBS = "nohup /Applications/OBS.app/Contents/MacOS/obs --minimize-to-tray &";
+const BASH_START_OBS = "/Applications/OBS.app/Contents/MacOS/obs";
+const START_FLAGS = ["--minimize-to-tray", "&", "echo $! > ./pid.log"];
 
 var fs = require('fs');						// WE NEED TO DEFINE Async LOG FILES FOR THE stdout stderr
 var out = fs.openSync('./logs/out.log', 'a');	// I HOPE OBS WILL CONTINUE WRITING TO THEM EVEN IF NodeJS CRASHES
@@ -13,7 +14,7 @@ const startRouter = express.Router()
 
 startRouter.get('/', checkJwt, function(req, res){
 	message = {'stdout':'','stderr':'','err':''}
-	const detachedOBS = spawn("/Applications/OBS.app/Contents/MacOS/obs" , ["--minimize-to-tray","&"],
+	const detachedOBS = spawn(BASH_START_OBS , START_FLAGS,
 	{ detached: true, stdio: [ 'ignore', out, err ] }
 	);
 	detachedOBS.on("error",function(err){

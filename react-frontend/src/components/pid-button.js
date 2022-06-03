@@ -3,7 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const ProcessIdButton = () => {
     const [pid, setPid] = useState('');
-    const serverUrl = "http://localhost:6060";
+    const serverUrl = process.env.REACT_APP_SERVER_URL;
     const { getAccessTokenSilently } = useAuth0();
 
     const getPid = async () => {
@@ -17,17 +17,29 @@ const ProcessIdButton = () => {
                         Authorization: `Bearer ${token}`,
                     },
                 },
-            );
-            const responseData = await response.text();
-
-            setPid(responseData)
+            )
+            .then((res)=>{
+                console.log(res);
+                return res.json()
+            })
+            .then((res_json)=>{
+                if(res_json['stdout'].length>2){
+                    console.log(res_json);
+                    return +res_json['stdout']
+                }
+                else{
+                    console.log("stdout less than 3")
+                    return 0
+                }
+            })
+            setPid(response)
         }
         catch(error){
             setPid("ERROR")
         }
     }
     useEffect(()=>{
-        console.log(pid)
+        console.log(`pidupdates - ${pid}`)
     },[pid])
     return (
         <button onClick={getPid}>Get PID</button>

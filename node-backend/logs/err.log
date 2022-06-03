@@ -5,6 +5,13 @@ error: os_dlopen(libpython3.9.dylib->libpython3.9.dylib): dlopen(libpython3.9.dy
 
 error: os_dlopen(/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib->/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib): dlopen(/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib, 257): image not found
 
+[2022-06-03 12:11:59] [info] Error getting remote endpoint: asio.system:22 (Invalid argument)
+[2022-06-03 12:17:57] [info] Error getting remote endpoint: asio.system:22 (Invalid argument)
+[2022-06-03 12:20:59] [error] handle_read_frame error: websocketpp.transport:7 (End of File)
+[2022-06-03 12:22:15] [error] handle_read_frame error: websocketpp.transport:7 (End of File)
+[2022-06-03 12:22:48] [error] handle_read_frame error: websocketpp.transport:7 (End of File)
+[2022-06-03 12:22:52] [info] Error getting remote endpoint: asio.system:22 (Invalid argument)
+[2022-06-03 12:34:05] [error] handle_read_frame error: websocketpp.transport:7 (End of File)
 QMetaObject::connectSlotsByName: No matching signal for on_tbar_position_valueChanged(int)
 QMetaObject::connectSlotsByName: No matching signal for on_actionShowTransitionProperties_triggered()
 QMetaObject::connectSlotsByName: No matching signal for on_actionHideTransitionProperties_triggered()
@@ -47,3 +54,64 @@ error: os_dlopen(libpython3.9.dylib->libpython3.9.dylib): dlopen(libpython3.9.dy
 
 error: os_dlopen(/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib->/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib): dlopen(/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib, 257): image not found
 
+[2022-06-03 13:11:31] [info] asio handle_accept error: asio.system:89 (Operation aborted.)
+[2022-06-03 13:11:31] [info] Error getting remote endpoint: asio.system:9 (Bad file descriptor)
+[2022-06-03 13:11:31] [info] asio async_shutdown error: asio.system:9 (Bad file descriptor)
+[2022-06-03 13:11:31] [error] handle_accept error: Operation aborted.
+[2022-06-03 13:11:31] [info] Stopping acceptance of new connections because the underlying transport is no longer listening.
+[2022-06-03 13:11:31] [info] Error getting remote endpoint: asio.system:22 (Invalid argument)
+QMetaObject::connectSlotsByName: No matching signal for on_tbar_position_valueChanged(int)
+QMetaObject::connectSlotsByName: No matching signal for on_actionShowTransitionProperties_triggered()
+QMetaObject::connectSlotsByName: No matching signal for on_actionHideTransitionProperties_triggered()
+error: os_dlopen(libpython3.9.dylib->libpython3.9.dylib): dlopen(libpython3.9.dylib, 257): image not found
+
+error: os_dlopen(/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib->/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib): dlopen(/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib, 257): image not found
+
+QMetaObject::connectSlotsByName: No matching signal for on_tbar_position_valueChanged(int)
+QMetaObject::connectSlotsByName: No matching signal for on_actionShowTransitionProperties_triggered()
+QMetaObject::connectSlotsByName: No matching signal for on_actionHideTransitionProperties_triggered()
+error: os_dlopen(libpython3.9.dylib->libpython3.9.dylib): dlopen(libpython3.9.dylib, 257): image not found
+
+error: os_dlopen(/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib->/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib): dlopen(/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib, 257): image not found
+
+[2022-06-03 13:44:06] [info] Error getting remote endpoint: asio.system:22 (Invalid argument)
+QMetaObject::connectSlotsByName: No matching signal for on_tbar_position_valueChanged(int)
+QMetaObject::connectSlotsByName: No matching signal for on_actionShowTransitionProperties_triggered()
+QMetaObject::connectSlotsByName: No matching signal for on_actionHideTransitionProperties_triggered()
+error: os_dlopen(libpython3.9.dylib->libpython3.9.dylib): dlopen(libpython3.9.dylib, 257): image not found
+
+error: os_dlopen(/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib->/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib): dlopen(/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib, 257): image not found
+
+[2022-06-03 14:21:19] [info] Error getting remote endpoint: asio.system:22 (Invalid argument)
+[2022-06-03 14:21:21] [info] Error getting remote endpoint: asio.system:22 (Invalid argument)
+[2022-06-03 14:21:32] [info] Error getting remote endpoint: asio.system:22 (Invalid argument)
+[2022-06-03 14:23:39] [info] Error getting remote endpoint: asio.system:22 (Invalid argument)
+[2022-06-03 14:23:39] [info] Error getting remote endpoint: asio.system:22 (Invalid argument)
+[2022-06-03 14:23:40] [info] Error getting remote endpoint: asio.system:22 (Invalid argument)
+[2022-06-03 14:23:50] [error] handle_read_frame error: websocketpp.transport:7 (End of File)
+[2022-06-03 14:24:25] [error] handle_read_frame error: websocketpp.transport:7 (End of File)
+[2022-06-03 14:34:47] [info] Error getting remote endpoint: asio.system:22 (Invalid argument)
+[2022-06-03 14:37:19] [info] Error getting remote endpoint: asio.system:22 (Invalid argument)
+[2022-06-03 14:41:24] [info] Error getting remote endpoint: asio.system:22 (Invalid argument)
+QMetaObject::connectSlotsByName: No matching signal for on_tbar_position_valueChanged(int)
+QMetaObject::connectSlotsByName: No matching signal for on_actionShowTransitionProperties_triggered()
+QMetaObject::connectSlotsByName: No matching signal for on_actionHideTransitionProperties_triggered()
+error: os_dlopen(libpython3.9.dylib->libpython3.9.dylib): dlopen(libpython3.9.dylib, 257): image not found
+
+error: os_dlopen(/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib->/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib): dlopen(/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib, 257): image not found
+
+[2022-06-03 14:57:54] [info] Error getting remote endpoint: asio.system:22 (Invalid argument)
+[2022-06-03 14:59:04] [info] Error getting remote endpoint: asio.system:22 (Invalid argument)
+QMetaObject::connectSlotsByName: No matching signal for on_tbar_position_valueChanged(int)
+QMetaObject::connectSlotsByName: No matching signal for on_actionShowTransitionProperties_triggered()
+QMetaObject::connectSlotsByName: No matching signal for on_actionHideTransitionProperties_triggered()
+error: os_dlopen(libpython3.9.dylib->libpython3.9.dylib): dlopen(libpython3.9.dylib, 257): image not found
+
+error: os_dlopen(/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib->/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib): dlopen(/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib, 257): image not found
+
+[2022-06-03 15:10:40] [error] handle_read_frame error: websocketpp.transport:7 (End of File)
+[2022-06-03 15:39:25] [info] asio handle_accept error: asio.system:89 (Operation aborted.)
+[2022-06-03 15:39:25] [info] Error getting remote endpoint: asio.system:9 (Bad file descriptor)
+[2022-06-03 15:39:25] [info] asio async_shutdown error: asio.system:9 (Bad file descriptor)
+[2022-06-03 15:39:25] [error] handle_accept error: Operation aborted.
+[2022-06-03 15:39:25] [info] Stopping acceptance of new connections because the underlying transport is no longer listening.

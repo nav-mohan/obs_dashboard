@@ -14,7 +14,7 @@ const { pidRouter } = require("./routerServices/pid.router");
 const { startRouter} = require("./routerServices/start.router");
 const { stopRouter } =  require("./routerServices/stop.router");
 const {readRouter } = require("./routerServices/read.router");
-const { checkJwt } = require('./authAPI/check-jwt');
+const {obsRouter} = require("./socketServices/obsWs.router")
 /**
  * App Variables
  */
@@ -27,11 +27,15 @@ app.use(cors({ origin: clientOrigins }))
 app.use(express.json())
 let httpServer = require('http').createServer(app);
 
-
 app.use('/pid',pidRouter)
 app.use('/start',startRouter)
 app.use('/stop',stopRouter)
 app.use('/read',readRouter)
+app.use('/obsws',obsRouter)
+
+/**
+ * OBS WebSocket Manager
+ */
 
 httpServer.listen(serverPort, function () {
 	console.log(`SERVER STARTED ON ${serverPort}`);

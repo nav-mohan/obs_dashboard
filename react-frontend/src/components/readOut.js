@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
-const ReadLogButton = () => {
-    const [outlog, setOutLog] = useState('');
-    const serverUrl = "http://localhost:6060";
+const ReadLogButton = ({setStdOutLog}) => {
+    const serverUrl = process.env.REACT_APP_SERVER_URL;
     const { getAccessTokenSilently } = useAuth0();
 
     const readOutLog = async () => {
         try {
             const token = await getAccessTokenSilently();
-
             const response = await fetch(
                 `${serverUrl}/read`,
                 {
@@ -18,17 +16,15 @@ const ReadLogButton = () => {
                     },
                 },
             );
-            const responseData = await response.text();
-
-            setOutLog(responseData)
+            const responseData = await response.json();
+            setStdOutLog(responseData)
         }
         catch (error) {
-            setOutLog("ERROR")
+            console.log(error)
+            setStdOutLog("ERROR")
         }
     }
-    useEffect(() => {
-        console.log(outlog)
-    }, [outlog])
+
     return (
         <button onClick={readOutLog}>Read out.log</button>
     )

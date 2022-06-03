@@ -2,24 +2,21 @@ const express = require("express");
 const { checkJwt } = require('../authAPI/check-jwt')
 const { exec } = require('child_process');
 
-const BASH_GET_OBS_PID = "ps -o comm,pid | grep OBS.app | grep Applications | awk {'print $2'} | head -1";
+const BASH_GET_OBS_PID = "ps aux | grep OBS.app | grep Applications | awk {'print $2'} ";
 const pidRouter = express.Router()
 
 pidRouter.get('/', checkJwt, function (req, res) {
+	console.log("GETTING PID")
 	message = { 'stdout': '', 'stderr': '', 'err': '' }
 	exec(BASH_GET_OBS_PID, (err, stdout, stderr) => {
-		if (err) {
-			message['err'] = err
-			res.send(message)
+		message['err'] = err
+		message['stderr'] = stderr
+		if(stdout.split("\n").length > 2){
+			
 		}
-		if (stderr) {
-			message['stderr'] = stderr
-			res.send(message)
-		}
-		if (stdout) {
-			message['stdout'] = stdout
-			res.send(message)
-		}
+		message['stdout'] = stdout.split("\n")
+		res.send(message)
+
 	});
 })
 

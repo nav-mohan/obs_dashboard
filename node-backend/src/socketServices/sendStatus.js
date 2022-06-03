@@ -5,7 +5,8 @@
 /**
 Use socket-io for updating the front-end data-viz of CPU/Memory usage
 */
-const io = require("socket.io")(httpServer, {
+socketIO = require('socket.io')
+const io = socketIO(httpServer, {
 	cors: {
 		origin: clientOrigins,
 		methods: ["GET"]
@@ -15,6 +16,8 @@ const io = require("socket.io")(httpServer, {
 const getStatus = () => {
 	console.log("GETTING STATUS")
 }
+
+
 
 module.exports = {
 	getStatus

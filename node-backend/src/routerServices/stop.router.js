@@ -2,7 +2,7 @@ const express = require("express");
 const { checkJwt } = require('../authAPI/check-jwt')
 const { exec } = require('child_process');
 
-const BASH_STOP_OBS = "kill -9 $(ps aux | grep OBS | grep Applications | awk {'print $2'})";
+const BASH_STOP_OBS = "kill -9 $(ps aux | grep OBS | grep Applications | awk {'print $2'}) | head -1";
 const stopRouter = express.Router()
 
 stopRouter.get('/', checkJwt, function (req, res) {
@@ -10,17 +10,17 @@ stopRouter.get('/', checkJwt, function (req, res) {
 	try{
 		exec(BASH_STOP_OBS, (err, stdout, stderr) => {
 			if (err) {
-				console.log('err')
+				console.log('ERR')
 				console.log(err)
 				message['err'] = err
 			}
 			if (stderr) {
-				console.log('stderr')
+				console.log('STDERR')
 				console.log(stderr)
 				message['stderr'] = stderr
 			}
-			if (stdout) {
-				console.log('stdout')
+			else{
+				console.log('STDOUT')
 				console.log(stdout)
 				message['stdout'] = stdout
 			}

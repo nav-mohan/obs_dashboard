@@ -3,7 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const StopObsButton = () => {
     const [stdio, setStdio] = useState('');
-    const serverUrl = "http://localhost:6060";
+    const serverUrl = process.env.REACT_APP_SERVER_URL;
     const { getAccessTokenSilently } = useAuth0();
 
     const stopObs = async () => {

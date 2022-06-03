@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const StartObsButton = () => {
-    const [stdio, setStdio] = useState('');
-    const serverUrl = "http://localhost:6060";
+    const [obsLogs, setObsLogs] = useState('');
+    const serverUrl = process.env.REACT_APP_SERVER_URL;
     const { getAccessTokenSilently } = useAuth0();
 
     const startObs = async () => {
@@ -20,15 +20,16 @@ const StartObsButton = () => {
             );
             const responseData = await response.text();
 
-            setStdio(responseData)
+            setObsLogs(responseData)
         }
         catch (error) {
-            setStdio("ERROR")
+            setObsLogs("ERROR")
         }
     }
     useEffect(() => {
-        console.log(stdio)
-    }, [stdio])
+        console.log("obsLogs")
+        console.log(obsLogs)
+    }, [obsLogs])
     return (
         <button onClick={startObs}>Start OBS</button>
     )
