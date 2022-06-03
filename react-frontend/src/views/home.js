@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import ProcessIdButton from "../components/pid-button"
 import StartObsButton from "../components/startObs-button";
 import StopObsButton from "../components/stopObs-button";
+import ReadLogButton from "../components/readOut";
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <ProcessIdButton/>
             <StartObsButton/>
             <StopObsButton/>
+            <ReadLogButton/>
         </div>
     )
 }

@@ -8,7 +8,6 @@ const stopRouter = express.Router()
 stopRouter.get('/', checkJwt, function (req, res) {
 	message = { 'stdout': '', 'stderr': '', 'err': '' }
 	try{
-
 		exec(BASH_STOP_OBS, (err, stdout, stderr) => {
 			if (err) {
 				console.log('err')
