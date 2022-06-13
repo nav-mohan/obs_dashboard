@@ -16,8 +16,8 @@ const ReadLogButton = ({setStdOutLog}) => {
                     },
                 },
             );
-            const responseData = await response.json();
-            setStdOutLog(responseData)
+            const responseData = await response.text();
+            setStdOutLog(responseData.split("\n"))
         }
         catch (error) {
             console.log(error)
