@@ -1,6 +1,6 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { NavBar, Loading} from "./components";
+import { NavBar, Loading,LoginForm} from "./components";
 import {Route, Routes } from "react-router-dom";
 import {Home, Status, Watch} from "./views"
 import { ProtectedRoute } from "./auth/protected-route";
@@ -13,6 +13,7 @@ function App() {
   }
   return (
     <div id = "app">
+      <LoginForm/>
       <NavBar/>
       <div>
       <Routes>

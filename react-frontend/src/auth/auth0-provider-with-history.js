@@ -4,21 +4,19 @@ import { Auth0Provider } from "@auth0/auth0-react";
 
 const Auth0ProviderWithHistory = ({children}) => {
     const navigate = useNavigate()
-    const domain = process.env.REACT_APP_AUTH0_DOMAIN;
-    const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
-    const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
-    console.log(domain,clientId,audience)
+    const {authDomain, authClientId, authAudience} = require("../config");
+    console.log(authDomain,authClientId,authAudience)
     const onRedirectCallback = (appState) => {
         navigate(appState?.returnTo || window.location.pathname);
       };
 
     return (
         <Auth0Provider
-            domain = {domain}
-            clientId = {clientId}
+            domain = {authDomain}
+            clientId = {authClientId}
             redirectUri={window.location.origin}
             onRedirectCallback={onRedirectCallback}
-            audience={audience}
+            audience={authAudience}
         >
             {children}
         </Auth0Provider>

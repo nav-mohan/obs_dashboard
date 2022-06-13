@@ -22,3 +22,10 @@ error: os_dlopen(libpython3.9.dylib->libpython3.9.dylib): dlopen(libpython3.9.dy
 error: os_dlopen(/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib->/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib): dlopen(/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib, 0x0101): tried: '/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib' (no such file)
 
 error: Failed to create source 'MONITOR'!
+QMetaObject::connectSlotsByName: No matching signal for on_tbar_position_valueChanged(int)
+QMetaObject::connectSlotsByName: No matching signal for on_actionShowTransitionProperties_triggered()
+QMetaObject::connectSlotsByName: No matching signal for on_actionHideTransitionProperties_triggered()
+error: os_dlopen(libpython3.9.dylib->libpython3.9.dylib): dlopen(libpython3.9.dylib, 257): image not found
+
+error: os_dlopen(/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib->/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib): dlopen(/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib, 257): image not found
+

@@ -388,3 +388,139 @@ info: obs_hotkey_thread(25 ms): min=25.029 ms, median=29.008 ms, max=40.195 
 info: obs_graphics_thread(33.3333 ms): min=26.878 ms, median=33.331 ms, max=39.367 ms, 34.2493% within ±2% of 33.333 ms (34.3164% lower, 31.4343% higher)
 info: =================================================
 info: Number of memory leaks: 0
+info: Using preferred locale 'en-GB'
+info: Rosetta translation used: false
+info: Command Line Arguments: --minimize-to-tray
+info: CPU Name: Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz
+info: CPU Speed: 4200MHz
+info: Physical Cores: 4, Logical Cores: 8
+info: Physical Memory: 8192MB Total
+info: OS Name: Mac OS X
+info: OS Version: Version 10.15.7 (Build 19H1922)
+info: Kernel Version: 19.6.0
+info: hotkeys-cocoa: Using layout 'com.apple.keylayout.US'
+info: Current Date/Time: 2022-06-13, 12:17:07
+info: Browser Hardware Acceleration: true
+info: Qt Version: 5.15.2 (runtime), 5.15.2 (compiled)
+info: Portable mode: false
+info: OBS 27.2.4 (mac)
+info: ---------------------------------
+info: ---------------------------------
+info: audio settings reset:
+	samples per sec: 48000
+	speakers:        2
+info: ---------------------------------
+info: Initializing OpenGL...
+info: Loading up OpenGL on adapter ATI Technologies Inc. AMD Radeon Pro 580 OpenGL Engine
+info: OpenGL loaded successfully, version 4.1 ATI-3.10.23, shading language 4.10
+info: ---------------------------------
+info: video settings reset:
+	base resolution:   1920x1080
+	output resolution: 1920x1080
+	downscale filter:  Bicubic
+	fps:               30/1
+	format:            NV12
+	YUV mode:          709/Partial
+info: NV12 texture support not available
+info: Audio monitoring device:
+	name: Default
+	id: default
+info: ---------------------------------
+warning: Failed to load 'en-GB' text for module: 'aja-output-ui.so'
+warning: No AJA devices found, skipping loading AJA UI plugin
+warning: Failed to initialize module 'aja-output-ui.so'
+warning: Failed to load 'en-GB' text for module: 'aja.so'
+warning: No AJA devices found, skipping loading AJA plugin
+warning: Failed to initialize module 'aja.so'
+warning: Failed to load 'en-GB' text for module: 'coreaudio-encoder.so'
+warning: Failed to load 'en-US' text for module: 'decklink-captions.so'
+warning: Failed to load 'en-US' text for module: 'decklink-ouput-ui.so'
+warning: Failed to load 'en-GB' text for module: 'frontend-tools.so'
+warning: [Python] Could not load library: libpython3.9.dylib
+warning: Failed to load 'en-GB' text for module: 'mac-capture.so'
+warning: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+info: No blackmagic support
+warning: Failed to load 'en-GB' text for module: 'mac-virtualcam.so'
+warning: Failed to load 'en-GB' text for module: 'mac-vth264.so'
+info: [VideoToolbox encoder]: Adding VideoToolbox H264 encoders
+info: [obs-browser]: Version 2.17.13
+info: [obs-browser]: CEF Version 95.0.0-MediaHandler.2462+g95e19b8+chromium-95.0.4638.69
+warning: Failed to load 'en-GB' text for module: 'obs-vst.so'
+warning: Failed to load 'en-GB' text for module: 'obs-x264.so'
+warning: Failed to load 'en-GB' text for module: 'rtmp-services.so'
+info: [vlc-video]: Couldn't find VLC installation, VLC video source disabled
+warning: Ignoring old obs-browser.so version
+warning: Failed to load 'en-GB' text for module: 'obs-websocket.so'
+info: [obs-websocket] you can haz websockets (version 4.9.1)
+info: [obs-websocket] qt version (compile-time): 5.15.2 ; qt version (run-time): 5.15.2
+info: [obs-websocket] module loaded!
+info: ---------------------------------
+info:   Loaded Modules:
+info:     obs-websocket.so
+info:     vlc-video.so
+info:     text-freetype2.so
+info:     rtmp-services.so
+info:     obs-x264.so
+info:     obs-vst.so
+info:     obs-transitions.so
+info:     obs-outputs.so
+info:     obs-filters.so
+info:     obs-ffmpeg.so
+info:     obs-browser.so
+info:     mac-vth264.so
+info:     mac-virtualcam.so
+info:     mac-syphon.so
+info:     mac-decklink.so
+info:     mac-capture.so
+info:     mac-avcapture.so
+info:     image-source.so
+info:     frontend-tools.so
+info:     decklink-ouput-ui.so
+info:     decklink-captions.so
+info:     coreaudio-encoder.so
+info: ---------------------------------
+info: ==== Startup complete ===============================================
+info: All scene data cleared
+info: ------------------------------------------------
+info: coreaudio: device 'iShowU Audio Capture' initialized
+info: [Loaded global audio device]: 'Desktop Audio'
+info: coreaudio: device 'Pro Tools | Carbon: I/O' initialized
+info: [Loaded global audio device]: 'Mic/Aux'
+info: Video Capture Device: No device selected
+info: coreaudio: device 'Scarlett 2i4 USB' initialized
+info: Logitech HD: Selected device 'HD Pro Webcam C920'
+info: Logitech HD: Capturing 'HD Pro Webcam C920' (0x14200000046d082d):
+	Resolution: 1920x1080
+	FPS: 30 (30000030/1000000)
+	Frame interval: 0.0333333 s
+	Input format: Auto (actual: MJPEG - JPEG OpenDML (dmb1))
+	Requested color space: Auto (-1)
+	Requested video range: Auto (-1)
+	Using format: <AVCaptureDeviceFormat: 0x7faf50c30d10> 'vide'/'dmb1' enc dims = 1920x1080, pres dims = 1920x1080 { 30.00 24.00 20.00 15.00 10.00 7.50 5.00 fps }
+info: adding 21 milliseconds of audio buffering, total audio buffering is now 21 milliseconds (source: Mic/Aux)
+
+info: LogitechSD: Selected device 'HD Pro Webcam C920'
+info: LogitechSD: Capturing 'HD Pro Webcam C920' (0x14200000046d082d):
+	Resolution: 1280x720
+	FPS: 30 (30000030/1000000)
+	Frame interval: 0.0333333 s
+	Input format: Auto (actual: MJPEG - JPEG OpenDML (dmb1))
+	Requested color space: Auto (-1)
+	Requested video range: Auto (-1)
+	Using format: <AVCaptureDeviceFormat: 0x7faf50c306b0> 'vide'/'dmb1' enc dims = 1280x720, pres dims = 1280x720 { 30.00 24.00 20.00 15.00 10.00 7.50 5.00 fps }
+info: adding 21 milliseconds of audio buffering, total audio buffering is now 42 milliseconds (source: Desktop Audio)
+
+info: Switched to scene 'LogitechHD+Scarlet'
+info: ------------------------------------------------
+info: Loaded scenes:
+info: - scene 'LogitechHD+Scarlet':
+info:     - source: 'Scarlet' (coreaudio_input_capture)
+info:     - source: 'Logitech HD' (av_capture_input)
+info:     - source: 'Video Capture Device' (av_capture_input)
+info: - scene 'LogitechSD+Scarlet':
+info:     - source: 'Scarlet' (coreaudio_input_capture)
+info:     - source: 'LogitechSD' (av_capture_input)
+info: ------------------------------------------------
+info: [obs-websocket] WSServer::start: Not locked to IPv4 bindings
+info: [obs-websocket] server started successfully on port 4444
+info: [obs-websocket] IO thread started.

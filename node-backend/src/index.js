@@ -9,12 +9,13 @@
 const express = require("express");
 const cors = require('cors');
 const helmet = require('helmet')
-const { clientOrigins, serverPort } = require("./config/env.dev");
+const { clientOrigins, serverPort } = require("./config");
 const { pidRouter } = require("./routerServices/pid.router");
 const { startRouter} = require("./routerServices/start.router");
 const { stopRouter } =  require("./routerServices/stop.router");
 const {readRouter } = require("./routerServices/read.router");
-const {obsRouter} = require("./socketServices/obsWs.router")
+const {obsRouter} = require("./socketServices/obsWs.router");
+const { loginRouter } = require("./routerServices/login-router");
 /**
  * App Variables
  */
@@ -24,7 +25,7 @@ const app = express();
  */
 app.use(helmet())
 app.use(cors({ origin: clientOrigins }))
-app.use(express.json())
+// app.use(express.json())
 let httpServer = require('http').createServer(app);
 
 app.use('/pid',pidRouter)
@@ -32,6 +33,7 @@ app.use('/start',startRouter)
 app.use('/stop',stopRouter)
 app.use('/read',readRouter)
 app.use('/obsws',obsRouter)
+app.use('/login',loginRouter)
 
 /**
  * OBS WebSocket Manager
