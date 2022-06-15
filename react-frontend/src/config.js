@@ -1,11 +1,9 @@
-const baseUrlDevelopment = process.env.REACT_APP_BASEURL_DEVELOPMENT
-const baseUrlProduction  = process.env.REACT_APP_BASEURL_PRODUCTION
-const loginPath          = process.env.REACT_APP_LOGIN_PATH
-const deployEnvironment  = process.env.REACT_APP_DEPLOYMENT_ENVIRONMENT
-const authDomain = process.env.REACT_APP_AUTH0_DOMAIN
-const authClientId = process.env.REACT_APP_AUTH0_CLIENT_ID
-const authAudience = process.env.REACT_APP_AUTH0_AUDIENCE
-const serverUrl = process.env.REACT_APP_SERVER_URL
+const baseUrlDevelopment = process.env.REACT_APP_BASEURL_DEVELOPMENT;
+const baseUrlProduction  = process.env.REACT_APP_BASEURL_PRODUCTION;
+const loginPath          = process.env.REACT_APP_LOGIN_PATH;
+const deployEnvironment  = process.env.REACT_APP_DEPLOYMENT_ENVIRONMENT;
+const serverUrl          = process.env.REACT_APP_SERVER_URL;
+
 var nodeBaseUrl;
 
 if(!baseUrlDevelopment){
@@ -32,9 +30,6 @@ if(deployEnvironment=='PRODUCTION'){
 }
 
 module.exports = {
-    authDomain,
-    authClientId,
-    authAudience,
     serverUrl,
     nodeBaseUrl,
     loginPath,

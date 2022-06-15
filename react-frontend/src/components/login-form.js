@@ -40,7 +40,10 @@ const LoginForm = () => {
         .then((resJson)=>{
             console.log(resJson)
             if(resJson.jwt){
-                localStorage.setItem('wordpressJWT',resJson.jwt)
+                localStorage.setItem('wordpressJwt',resJson.jwt);
+                localStorage.setItem('wordpressJwtExp',resJson.jwtExp);
+                localStorage.setItem('wordpressUsername',resJson.usernameEmail);
+
             }
         })
         .catch((err) => {

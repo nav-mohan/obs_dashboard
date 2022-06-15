@@ -1,0 +1,57 @@
+
+> dashboard@0.1.0 test
+> react-scripts test
+
+  console.log
+    pidupdates -
+
+      at src/components/pid-button.js:42:17
+
+  console.log
+    obsLogs
+
+      at src/components/startObs-button.js:30:17
+
+  console.log
+
+
+      at src/components/startObs-button.js:31:17
+
+  console.log
+
+
+      at src/components/stopObs-button.js:30:17
+
+  console.log
+    obsWsStatus
+
+      at src/components/initObsWs-button.js:31:17
+
+  console.log
+
+
+      at src/components/initObsWs-button.js:32:17
+
+  console.log
+    stdOutLog
+
+      at src/views/home.js:14:17
+
+  console.log
+
+
+      at src/views/home.js:15:17
+
+  console.log
+    [ 'stdOutLog' ]
+
+      at src/views/home.js:16:17
+
+  console.log
+    usernameEmail  password
+
+      at src/components/login-form.js:55:17
+
+
+
+[1B[J

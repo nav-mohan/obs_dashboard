@@ -1,7 +1,7 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { NavBar, Loading,LoginForm} from "./components";
-import {Route, Routes } from "react-router-dom";
+import {Route, Routes,useLocation } from "react-router-dom";
 import {Home, Status, Watch} from "./views"
 import { ProtectedRoute } from "./auth/protected-route";
 

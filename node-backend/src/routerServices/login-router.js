@@ -89,8 +89,13 @@ loginRouter.post('/', (nodeLoginRequest,nodeLoginResponse)=>{
 
                 // if the auth attempt succeeded
                 if(jwtPayload.success==true && jwtPayload.data && jwtPayload.data.jwt){
-                    nodeLoginResponse.send(jwtPayload.data);// Now send just the jwt 
-                    console.log(jwtPayload.user_info.roles)// For more important things you will also do an if-else check for the jwtPayload.user_info.roles before sendint the jwt over to the client
+                    var userInfo = {
+                        "userLogin":jwtPayload.user_info.data.user_login,
+                        "userNiceName":jwtPayload.user_info.data.user_nicename,
+                        "userDisplayName":jwtPayload.user_info.data.display_name,
+                        "userRoles":jwtPayload.user_info.roles
+                    }
+                    nodeLoginResponse.send({...jwtPayload.data, ...userInfo});// Now send just the jwt 
                     return;
                 }
                 else{
