@@ -1,10 +1,13 @@
-var jwt = require('jsonwebtoken');
+var jwt                 = require('jsonwebtoken');
+const {wordpressBaseUrl,
+    wordpressJwtLoginPath,
+    wordpressJwtAuthKey,
+    deployEnvironment}  = require('../config');
+const express           = require('express');
+const https             = require('https');
 
-const {wordpressBaseUrl,wordpressJwtLoginPath,wordpressJwtAuthKey,deployEnvironment} = require('../config');
-const express = require('express');
-const https = require('https');
+const loginRouter       = express.Router();
 
-const loginRouter = express.Router();
 loginRouter.post('/', (nodeLoginRequest,nodeLoginResponse)=>{
     console.log("RECEIVBINGH LOGHIN IN REQU")
     
@@ -17,6 +20,8 @@ loginRouter.post('/', (nodeLoginRequest,nodeLoginResponse)=>{
     
     nodeLoginRequest.on("end", () => {
         console.log("Login Form Received from React");
+
+        // Do Some Sanitization of the Login Form here -- but for what?
         
         // prepare the Login Form for Wordpress
         try {

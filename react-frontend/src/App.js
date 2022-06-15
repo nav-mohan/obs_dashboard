@@ -7,20 +7,25 @@ import { ProtectedRoute } from "./auth/protected-route";
 
 function App() {
   // const NODE_SERVER = process.env.REACT_APP_SERVER_URL;
-  const {isLoading} = useAuth0();
-  if(isLoading){
-    return <Loading/>
-  }
+  // const {isLoading} = useAuth0();
+  // if(isLoading){
+  //   return <Loading/>
+  // }
   return (
     <div id = "app">
       <LoginForm/>
       <NavBar/>
       <div>
       <Routes>
+        <Route element={<Home/>} path = "/" exact />
+        <Route element={<Status/>} path = "/status" />
+        <Route element={<Watch/>} path = "/watch" />
+      </Routes>
+      {/* <Routes>
         <Route path = "/" exact element={<ProtectedRoute component = {Home}/>}/>
         <Route path = "/status" element={<ProtectedRoute component ={Status}/>}/>
         <Route element={<Watch/>} path = "/watch" />
-      </Routes>
+      </Routes> */}
       </div>
     </div>
 

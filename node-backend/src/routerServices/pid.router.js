@@ -1,9 +1,8 @@
-const express = require("express");
-const { checkJwt } = require('../authAPI/check-jwt')
-const { exec } = require('child_process');
-
-const BASH_GET_OBS_PID = "ps aux | grep OBS.app | grep Applications | awk {'print $2'} ";
-const pidRouter = express.Router()
+const express 			= require("express");
+const { checkJwt } 		= require('../authAPI/check-jwt')
+const { exec } 			= require('child_process');
+const BASH_GET_OBS_PID 	= "ps aux | grep OBS.app | grep Applications | awk {'print $2'} ";
+const pidRouter 		= express.Router()
 
 pidRouter.get('/', checkJwt, function (req, res) {
 	console.log("GETTING PID")

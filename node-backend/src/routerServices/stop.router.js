@@ -1,8 +1,7 @@
 const express = require("express");
 const { checkJwt } = require('../authAPI/check-jwt')
 const { exec } = require('child_process');
-
-const BASH_STOP_OBS = "kill -9 $(ps aux | grep OBS | grep Applications | awk {'print $2'}) | head -1";
+const {BASH_STOP_OBS} = require('./bash-scripts')
 const stopRouter = express.Router()
 
 stopRouter.get('/', checkJwt, function (req, res) {

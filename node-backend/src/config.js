@@ -3,23 +3,17 @@ dotenv.config();
 
 var nodeBaseUrl;
 
-const audience = process.env.AUTH0_AUDIENCE;
-const domain = process.env.AUTH0_DOMAIN;
-const serverPort = process.env.NODE_SERVER_PORT;
-const clientOriginUrl = process.env.CLIENT_ORIGIN_URL;
-const wordpressBaseUrl = process.env.WORDPRESS_BASE_URL;
-const wordpressJwtAuthKey = process.env.WORDPRESS_JWT_AUTH_KEY
+const secretServerKey       = process.env.SECRET_SERVER_KEY;
+const serverPort            = process.env.NODE_SERVER_PORT;
+const clientOriginUrl       = process.env.CLIENT_ORIGIN_URL;
+const wordpressBaseUrl      = process.env.WORDPRESS_BASE_URL;
+const wordpressJwtAuthKey   = process.env.WORDPRESS_JWT_AUTH_KEY
 const wordpressJwtLoginPath = process.env.WORDPRESS_JWT_LOGIN_PATH;
-const deployEnvironment = process.env.DEPLOY_ENVIRONMENT;
+const deployEnvironment     = process.env.DEPLOY_ENVIRONMENT;
 
-if(!audience){
-    audience = "OBS-Dashboard"
-    throw new Error(".env is missing AUTH0_AUDIENCE");
-}
-
-if(!domain){
-    domain = 'dev-nb9beumc.us.auth0.com'
-    throw new Error(".env is missing AUTH0_DOMAIN");
+if(!secretServerKey){
+    secretServerKey='really-secret-key-here';
+    throw new Error(".env is missing SECRET_SERVER_KEY");
 }
 
 if(!serverPort){
@@ -56,9 +50,9 @@ if(deployEnvironment === "DEVELOPMENT"){
 if(deployEnvironment === "PRODUCTION"){
     nodeBaseUrl = `${wordpressBaseUrl}:${serverPort}`;
 }
+
 module.exports = {
-    audience,
-    domain,
+    secretServerKey,
     serverPort,
     clientOriginUrl,
     clientOrigins,
