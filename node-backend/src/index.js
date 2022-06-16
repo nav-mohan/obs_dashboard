@@ -15,9 +15,10 @@ const { pidRouter } 	= require("./routerServices/pid.router");
 const { startRouter} 	= require("./routerServices/start.router");
 const { stopRouter } 	=  require("./routerServices/stop.router");
 const {readRouter } 	= require("./routerServices/read.router");
-const {obsRouter} 		= require("./socketServices/obsWs.router");
+const { obsRouter } 	= require("./socketServices/obsWs.router");
 const { loginRouter } 	= require("./routerServices/login-router");
-
+const { refreshRouter } = require("./routerServices/refresh-router")
+const { validateRouter }= require("./routerServices/validate-router")
 /**
  * App Variables
  */
@@ -36,6 +37,8 @@ app.use('/stop',stopRouter)
 app.use('/read',readRouter)
 app.use('/obsws',obsRouter)
 app.use('/login',loginRouter)
+app.use('/refresh',refreshRouter)
+app.use('/validate',validateRouter)
 
 /**
  * OBS WebSocket Manager

@@ -9,25 +9,25 @@ const clientOriginUrl       = process.env.CLIENT_ORIGIN_URL;
 const wordpressBaseUrl      = process.env.WORDPRESS_BASE_URL;
 const wordpressJwtAuthKey   = process.env.WORDPRESS_JWT_AUTH_KEY
 const wordpressJwtLoginPath = process.env.WORDPRESS_JWT_LOGIN_PATH;
+const wordpressJwtValidatePath = process.env.WORDPRESS_JWT_VALIDATE_PATH;
+const wordpressJwtRefreshPath = process.env.WORDPRESS_JWT_REFRESH_PATH;
+const wordpressJwtRevokePath = process.env.WORDPRESS_JWT_REVOKE_PATH;
 const deployEnvironment     = process.env.DEPLOY_ENVIRONMENT;
 
 if(!secretServerKey){
-    secretServerKey='really-secret-key-here';
     throw new Error(".env is missing SECRET_SERVER_KEY");
 }
 
 if(!serverPort){
-    serverPort=6060;
     throw new Error(".env is missing SERVER_PORT");
 }
 
 if(!clientOriginUrl){
-    clientOriginUrl = "http://localhost:4040"
     throw new Error(".env is missing CLIENT_ORIGIN_URL");
 }
 
 if(!wordpressBaseUrl){
-    wordpressBaseUrl = "https://fm949.ca";
+    throw new Error(".env is missing WORDPRESS_BASE_URL");
 }
 
 if(!wordpressJwtAuthKey){
@@ -35,7 +35,16 @@ if(!wordpressJwtAuthKey){
 }
 
 if(!wordpressJwtLoginPath){
-    wordpressJwtLoginPath = "/wp-json/simple-jwt-login/v1/auth";
+    throw new Error(".env is missing WORDPRESS_JWT_LOGIN_PATH");
+}
+if(!wordpressJwtValidatePath){
+    throw new Error(".env is missing WORDPRESS_JWT_VALIDATE_PATH");
+}
+if(!wordpressJwtRefreshPath){
+    throw new Error(".env is missing WORDPRESS_JWT_REFRESH_PATH");
+}
+if(!wordpressJwtRevokePath){
+    throw new Error(".env is missing WORDPRESS_JWT_REVOKE_PATH");
 }
 
 const clientOrigins = ["http://localhost:4040"];
@@ -60,6 +69,9 @@ module.exports = {
     wordpressBaseUrl,
     wordpressJwtAuthKey,
     wordpressJwtLoginPath,
+    wordpressJwtValidatePath,
+    wordpressJwtRefreshPath,
+    wordpressJwtRevokePath,
     deployEnvironment
   };
   
