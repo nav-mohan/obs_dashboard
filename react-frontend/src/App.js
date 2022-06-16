@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
 import { Loading, LoginForm, NavBar} from "./components";
 import {Route, Routes,useLocation } from "react-router-dom";
-import {Home, Status, Watch} from "./views"
-import { ProtectedRoute } from "./auth/protected-route";
-import { Profile } from "./components/auth-header/profile";
-import { AuthHeader } from "./components/auth-header/auth-header";
+import {Home, } from "./views"
+import { Profile } from "./components/profile";
+import { AuthHeader } from "./components/auth-header";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false)

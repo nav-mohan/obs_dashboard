@@ -1,7 +1,7 @@
 import React from "react";
 
 import { MainNav } from "./main-nav";
-import { AuthHeader } from "./auth-header/auth-header";
+import { AuthHeader } from "./auth-header";
 
 const NavBar = () => {
     return (

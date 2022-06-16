@@ -1,4 +1,4 @@
-import LoginForm from "../login-form"
+import LoginForm from './login-form'
 import {Button} from 'react-bootstrap'
 import { NavLink } from "react-router-dom"
 

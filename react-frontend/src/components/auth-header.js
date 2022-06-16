@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { nodeBaseUrl, validatePath } from "../../config";
+import { nodeBaseUrl, validatePath } from "../config";
 import { Profile } from "./profile";
 import { AuthLink } from "./auth-link";
 import { NavLink } from "react-router-dom";

@@ -1,3 +1,10 @@
 import React from "react";
-import { LoginButton } from "../components/login-button";
-import { LogoutButton } from "../components/logout-button";
+import { LoginForm } from "../components";
+import Loading from "../components";
+
+const AuthView = ({isAuthenticated}) => {
+    if(!isAuthenticated){
+        return;
+    }
+    return;
+}
