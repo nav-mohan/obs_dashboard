@@ -7,25 +7,25 @@ import InitObsWsButton from "../components/initObsWs-button";
 import ObsLoginForm from "../components/loginObsWsForm";
 import ObsStdLogs from "../components/obsLogs";
 
-const Home = () => {
+const Home = ({isAuthenticated}) => {
     const [stdOutLog, setStdOutLog] = useState('');
+    if(isAuthenticated){
 
-    useEffect(() => {
-        console.log('stdOutLog')
-        console.log({stdOutLog}["stdOutLog"])
-        console.log(Object.keys({stdOutLog}))
-    }, [stdOutLog])
-
+        return (
+            <div>
+                <h1>Make the UI and Routes work proper first</h1>
+                {/* <ProcessIdButton/> */}
+                {/* <StartObsButton/> */}
+                {/* <StopObsButton/> */}
+                {/* <ReadLogButton setStdOutLog={setStdOutLog}/> */}
+                {/* <ObsLoginForm/> */}
+                {/* <ObsStdLogs stdOutLog={stdOutLog}/> */}
+            </div>
+        )
+    }
     return (
         <div>
-            <h1>THIS IS THE HOME PAGE</h1>
-            <h3>We'll make API calls </h3>
-            <ProcessIdButton/>
-            <StartObsButton/>
-            <StopObsButton/>
-            <ReadLogButton setStdOutLog={setStdOutLog}/>
-            <ObsLoginForm/>
-            <ObsStdLogs stdOutLog={stdOutLog}/>
+            Please Login
         </div>
     )
 }

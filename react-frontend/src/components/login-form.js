@@ -3,25 +3,26 @@ import {Button,Form} from 'react-bootstrap'
 import validator from 'validator';
 import { nodeBaseUrl, loginPath } from "../config";
 
-
-const LoginForm = () => {
-
-    const [usernameEmail,setUsernameEmail] = useState('')
-    const [password,setPassword] = useState('')
+const LoginForm = ({setIsAuthenticated,setUserDisplayName,setIsLoading}) => {
+    console.log("Creating Login Form now")
+    const [inputUsernameEmail,setInputUsernameEmail] = useState('')
+    const [inputPassword,setInputPassword] = useState('')//is it safe to store passwords on a React state?
 
     const loginFunction = (e) => {
         e.preventDefault();
+        setIsLoading(true)
+
         console.log("Logging In");
 
         // Construct the POST body
-        var postData = {'password':password};
-        if (validator.isEmail(usernameEmail)){
-            var formBody = encodeURIComponent(`email=${usernameEmail}`) + "&" + encodeURIComponent(`password=${password}`);
+        var postData = {'password':inputPassword};
+        if (validator.isEmail(inputUsernameEmail)){
+            var formBody = encodeURIComponent(`email=${inputUsernameEmail}`) + "&" + encodeURIComponent(`password=${inputPassword}`);
         }
         else{
-            var formBody = encodeURIComponent(`username=${usernameEmail}`) + "&" + encodeURIComponent(`password=${password}`);
+            var formBody = encodeURIComponent(`username=${inputUsernameEmail}`) + "&" + encodeURIComponent(`password=${inputPassword}`);
         }
-        
+
         // Send POST request to Node
         fetch(`${nodeBaseUrl}${loginPath}`, {
             method: 'POST',
@@ -39,32 +40,54 @@ const LoginForm = () => {
         })
         .then((resJson)=>{
             console.log(resJson)
-            if(resJson.jwt){
-                localStorage.setItem('wordpressJwt',resJson.jwt);
-                localStorage.setItem('wordpressJwtExp',resJson.jwtExp);
-                localStorage.setItem('wordpressUsername',resJson.usernameEmail);
-
+            if(resJson.success == true){
+                setIsAuthenticated(true)
+                setUserDisplayName(resJson.userDisplayName)
+                setIsLoading(false)
+                if(resJson.jwt){
+                    localStorage.setItem(
+                        'radioWesternWordpressAccessToken',
+                        resJson.jwt
+                    );
+                }
+                if(resJson.userLogin){
+                    localStorage.setItem(
+                        'radioWesternWordpressUserLogin',
+                        resJson.userLogin
+                    );
+                }
+                if(resJson.userPass){
+                    localStorage.setItem(
+                        'radioWesternWordpressUserPass',
+                        resJson.userPass
+                    );
+                }
+            }
+            else{
+                setIsLoading(false)
+                setIsAuthenticated(false)
+                setUserDisplayName('')
+                alert(`ERROR 
+                ${resJson.wpStatusCode} 
+                (${resJson.wpStatusMessage}) : 
+                ${resJson.wpPayloadMessage}
+                ${resJson.errorDetails}`)
             }
         })
         .catch((err) => {
             console.log("err",err);
         });
     }
-
-    useEffect(()=>{
-        console.log('usernameEmail',usernameEmail,'password',password);
-    },[usernameEmail,password])
-
     return (
         <Form>
             <Form.Group className="mb-3" controlId="formBasicUsernameEmail">
                 <Form.Label>Username/email</Form.Label>
-                <Form.Control type="email" placeholder="Enter username or email" value = {usernameEmail} onChange={(e) => setUsernameEmail(e.target.value)}/>
+                <Form.Control type="email" placeholder="Enter username or email" value = {inputUsernameEmail} onChange={(e) => setInputUsernameEmail(e.target.value)}/>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" value = {password}  onChange={(e) => setPassword(e.target.value)}/>
+                <Form.Control type="password" placeholder="Password" value = {inputPassword}  onChange={(e) => setInputPassword(e.target.value)}/>
             </Form.Group>
 
             <Button variant='success' onClick={loginFunction}>Log Me in</Button>

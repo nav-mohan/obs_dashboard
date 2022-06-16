@@ -1,13 +1,13 @@
 import React from "react";
 
 import { MainNav } from "./main-nav";
-import { AuthNav } from "./auth-nav";
+import { AuthHeader } from "./auth-header/auth-header";
 
 const NavBar = () => {
     return (
         <div>
+            <AuthHeader/>
             <MainNav/>
-            <AuthNav/>
         </div>
     )
 };
